@@ -1,0 +1,108 @@
+JFDML JFormDesigner: "6.0.4.1.172" Java: "1.8.0_152-release" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+			"$horizontalGroup": "par l {seq {space :::p, comp textField1:::::x, space :::p}, seq l {space :p:75:p, comp creerSalle:::p:131:p, space ::186:x, comp button2:::p:131:p, space :p:77:p}, seq {space :p:233:p, comp button3:::p:131:p, space ::236:x}, seq l {space :::p, comp scrollPane1::::588:x, space :::p}}"
+			"$verticalGroup": "par l {seq l {space :::p, comp textField1:::p:62:p, space u:::p, comp scrollPane1:::p:268:p, space :::x, par b {comp creerSalle::b:p:62:p, comp button2::b:p:62:p}, space u:::p, comp button3:::p::p, space :p:51:p}}"
+		} ) {
+			name: "this"
+			"background": sfield java.awt.Color gray
+			"preferredSize": new java.awt.Dimension( 600, 500 )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "textField1"
+				"horizontalAlignment": 0
+				"text": "Liste des salles de ventes"
+				"font": new java.awt.Font( "Noto Sans", 0, 26 )
+				"background": sfield java.awt.Color gray
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "creerSalle"
+				"text": "Créer une salle "
+				addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "button1MouseClicked", true ) )
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "button2"
+				"text": "Valider"
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "button3"
+				"text": "Annuler"
+			} )
+			add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
+				name: "scrollPane1"
+				add( new FormComponent( "javax.swing.JTable" ) {
+					name: "table1"
+				} )
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 0, 0 )
+			"size": new java.awt.Dimension( 600, 500 )
+		} )
+		add( new FormWindow( "javax.swing.JDialog", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+			"$horizontalGroup": "par l {seq l {space :p:36:p, par l {seq {comp button4::::324:x, space :p:33:p}, seq {par l {par t {comp label1::t:p::p, comp choixMultiple::t:p:108:p, comp choixRevocable::t:p:108:p}, seq l {space :p:20:p, comp label4:::p::p}, seq l {space :p:6:p, par t {comp label7:::p::p, comp label5:::p::p}, space s:::p, par l {comp heure:::p:43:p, comp jour:::p:43:p}}}, space ::41:x, par l {seq t {par l {comp choixMontant::t:p:108:p, seq t {comp label3:::p::p, space s:::p, comp prix:::p:77:p}, comp limite::t:p::p}, space :p:33:p}, seq t {comp label2:::p::p, space :p:41:p}}}}}}"
+			"$verticalGroup": "par l {seq l {space ::36:x, par l {seq {comp label1:::p::p, space :::p, comp choixMultiple:::p::p}, seq {comp label2:::p::p, space :::p, comp choixMontant:::p::p}}, space u:::p, comp label4:::p::p, space :p:4:p, par b {comp prix::b:p::p, comp label3::b:p::p, comp choixRevocable::b:p::p}, par l {seq l {space :p:46:p, comp limite:::p::p}, seq l {space u:::p, par b {comp label7::b:p::p, comp jour::b:p::p}, space :p:12:p, par b {comp label5::b:p::p, comp heure::b:p::p}}}, space :p:69:p, comp button4:::p:40:p, space :p:15:p}}"
+		} ) {
+			name: "ajout"
+			"background": sfield java.awt.Color gray
+			"modal": true
+			"resizable": false
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "prix"
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "button4"
+				"text": "Créer "
+				addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "button4MouseClicked", true ) )
+			} )
+			add( new FormComponent( "javax.swing.JComboBox" ) {
+				name: "choixMultiple"
+			} )
+			add( new FormComponent( "javax.swing.JComboBox" ) {
+				name: "choixMontant"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label1"
+				"text": "Enchères multiple ?"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label2"
+				"text": "Type d'enchères"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label3"
+				"text": "Prix départ"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label4"
+				"text": "Révocables ?"
+			} )
+			add( new FormComponent( "javax.swing.JComboBox" ) {
+				name: "choixRevocable"
+			} )
+			add( new FormComponent( "javax.swing.JCheckBox" ) {
+				name: "limite"
+				"text": "Durée illimitée"
+				addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "checkBox1MouseClicked", true ) )
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label5"
+				"text": "Nb Heures"
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "heure"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label7"
+				"text": "Nb Jours"
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "jour"
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 650, 110 )
+			"size": new java.awt.Dimension( 395, 390 )
+		} )
+	}
+}

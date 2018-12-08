@@ -1,0 +1,40 @@
+JFDML JFormDesigner: "6.0.4.1.172" Java: "1.8.0_152-release" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+			"$horizontalGroup": "par l {seq {space :p:150:p, par l {seq l {par t {comp mail::t:p:291:p, comp button2:::p:285:p}, space :0:159:x}, seq {space :54:54:p, comp text:::p:195:p, space ::201:x}}}, seq t {space ::263:x, comp button1:::p::p, space :p:259:p}}"
+			"$verticalGroup": "par l {seq l {space :p:131:p, comp text:::p:30:p, space s:::p, comp mail:::p::p, space u:::p, comp button1:::p::p, space :p:88:p, comp button2:::p:85:p, space ::76:x}}"
+		} ) {
+			name: "this"
+			"background": sfield java.awt.Color gray
+			"preferredSize": new java.awt.Dimension( 600, 500 )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "text"
+				"text": "Adresse mail"
+				"background": sfield java.awt.Color gray
+				"font": new com.jformdesigner.model.SwingDerivedFont( null, 0, 5, false )
+				"foreground": sfield java.awt.Color black
+				"editable": false
+				"horizontalAlignment": 0
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "mail"
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "button1"
+				"text": "Valider"
+				addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "button1MouseClicked", true ) )
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "button2"
+				"text": "Nouveau Client"
+				addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "button2MouseClicked", true ) )
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 90, 30 )
+			"size": new java.awt.Dimension( 600, 500 )
+		} )
+	}
+}

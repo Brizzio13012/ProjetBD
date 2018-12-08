@@ -1,0 +1,69 @@
+JFDML JFormDesigner: "6.0.4.1.172" Java: "1.8.0_152-release" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+			"$horizontalGroup": "par l {seq {par l {seq {par l {seq {space :p:139:p, par l:::p {comp button1::l:::x, seq l {par t {comp textField5:::p::p, comp textField6:::p::p, comp textField7::t:p::p}, space :p:27:p, par l:::p {comp prenom::::193:x, comp email::l::193:x, comp nom::l::193:x}}}}, seq l {space :p:230:p, comp annuler:::p:131:p}}, space :0:155:x}, seq l {space :::p, comp textField1::::588:x}}, space :::p}}"
+			"$verticalGroup": "par l {seq t {space :::p, comp textField1:::p::p, space :p:129:p, par l {comp textField5:::p:30:p, comp nom:::p::p}, space :::p, par l {comp textField6:::p:30:p, comp prenom:::p::p}, space :::p, par l {comp textField7:::p:30:p, comp email:::p::p}, space :p:48:p, comp button1:::p:66:p, space :p:27:p, comp annuler:::p::p, space ::46:x}}"
+		} ) {
+			name: "this"
+			"background": sfield java.awt.Color gray
+			"preferredSize": new java.awt.Dimension( 600, 500 )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "button1"
+				"text": "Valider"
+				addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "button1MouseClicked", true ) )
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "textField5"
+				"text": "Nom"
+				"background": sfield java.awt.Color gray
+				"font": &SwingDerivedFont0 new com.jformdesigner.model.SwingDerivedFont( null, 0, 5, false )
+				"foreground": sfield java.awt.Color black
+				"editable": false
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "textField6"
+				"text": "Prénom"
+				"background": sfield java.awt.Color gray
+				"font": #SwingDerivedFont0
+				"foreground": sfield java.awt.Color black
+				"editable": false
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "textField7"
+				"text": "E-mail"
+				"background": sfield java.awt.Color gray
+				"font": #SwingDerivedFont0
+				"foreground": sfield java.awt.Color black
+				"editable": false
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "nom"
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "email"
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "prenom"
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "annuler"
+				"text": "Annuler"
+				addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "annulerMouseClicked", true ) )
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "textField1"
+				"horizontalAlignment": 0
+				"font": new java.awt.Font( "Noto Sans", 0, 26 )
+				"text": "Inscription"
+				"background": sfield java.awt.Color gray
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 0, 0 )
+			"size": new java.awt.Dimension( 600, 500 )
+		} )
+	}
+}
+
