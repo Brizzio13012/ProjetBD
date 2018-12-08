@@ -34,6 +34,10 @@ public class AdminMenuSalle extends JPanel {
         ajout.setVisible(true);
     }
 
+    /**
+     * Lorsque l'on clique sur le bouton valider, on va créer un objet TypeEnchere qu'il faudra rentrer dans la BD après
+     *
+     */
     private void button4MouseClicked(MouseEvent e) {
         boolean montante;
         if (choixMontant.getSelectedItem().equals("montante")) {
