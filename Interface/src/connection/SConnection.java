@@ -7,9 +7,9 @@ public class SConnection {
     //URL de connexion
     private String url = "jdbc:oracle:thin:@ensioracle1.imag.fr:1521:ensioracle1";
     //Nom du user
-    private String user = "pontf";
+    private String user = "leducqt";
     //Mot de passe de l'utilisateur
-    private String passwd = "pontf";
+    private String passwd = "leducqt";
     //Objet connection
     private static Connection connect;
 
