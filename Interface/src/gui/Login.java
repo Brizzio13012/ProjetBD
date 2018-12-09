@@ -32,6 +32,13 @@ public class Login extends JPanel {
             contentPane.revalidate();
             contentPane.repaint();
         }
+        else {
+            JPanel contentPane = (JPanel) ((JFrame) this.getTopLevelAncestor()).getContentPane();
+            contentPane.removeAll();
+            contentPane.add(new MenuSalle());
+            contentPane.revalidate();
+            contentPane.repaint();
+        }
     }
 
     private void initComponents() {

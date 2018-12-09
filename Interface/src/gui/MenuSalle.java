@@ -17,10 +17,6 @@ public class MenuSalle extends JPanel {
         initComponents();
     }
 
-    private void button1MouseClicked(MouseEvent e) {
-        // TODO add your code here
-    }
-
     private void annulerMouseClicked(MouseEvent e) {
         JPanel contentPane = (JPanel) ((JFrame) this.getTopLevelAncestor()).getContentPane();
         contentPane.removeAll();
@@ -33,7 +29,6 @@ public class MenuSalle extends JPanel {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents
         // Generated using JFormDesigner Evaluation license - Fabrice
         textField1 = new JLabel();
-        creerSalle = new JButton();
         button2 = new JButton();
         annuler = new JButton();
         scrollPane1 = new JScrollPane();
@@ -58,15 +53,6 @@ public class MenuSalle extends JPanel {
         textField1.setText("Liste des salles de ventes");
         textField1.setFont(new Font("Noto Sans", Font.PLAIN, 26));
         textField1.setBackground(Color.gray);
-
-        //---- creerSalle ----
-        creerSalle.setText("Cr\u00e9er une salle ");
-        creerSalle.addMouseListener(new MouseAdapter() {
-            @Override
-            public void mouseClicked(MouseEvent e) {
-                button1MouseClicked(e);
-            }
-        });
 
         //---- button2 ----
         button2.setText("Valider");
@@ -94,26 +80,23 @@ public class MenuSalle extends JPanel {
             layout.createParallelGroup()
                 .addGroup(layout.createSequentialGroup()
                     .addContainerGap()
-                    .addComponent(textField1, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addContainerGap())
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(75, 75, 75)
-                    .addComponent(creerSalle, GroupLayout.PREFERRED_SIZE, 131, GroupLayout.PREFERRED_SIZE)
-                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
-                    .addComponent(label6)
-                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                    .addComponent(numero, GroupLayout.PREFERRED_SIZE, 46, GroupLayout.PREFERRED_SIZE)
-                    .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
-                    .addComponent(button2, GroupLayout.PREFERRED_SIZE, 131, GroupLayout.PREFERRED_SIZE)
-                    .addGap(77, 77, 77))
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(233, 233, 233)
-                    .addComponent(annuler, GroupLayout.PREFERRED_SIZE, 131, GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(236, Short.MAX_VALUE))
-                .addGroup(layout.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(scrollPane1, GroupLayout.DEFAULT_SIZE, 588, Short.MAX_VALUE)
-                    .addContainerGap())
+                    .addGroup(layout.createParallelGroup()
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(textField1, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addContainerGap())
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(scrollPane1, GroupLayout.DEFAULT_SIZE, 588, Short.MAX_VALUE)
+                            .addContainerGap())
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(6, 6, 6)
+                            .addComponent(label6)
+                            .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(numero, GroupLayout.PREFERRED_SIZE, 46, GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(button2, GroupLayout.PREFERRED_SIZE, 131, GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 128, Short.MAX_VALUE)
+                            .addComponent(annuler, GroupLayout.PREFERRED_SIZE, 131, GroupLayout.PREFERRED_SIZE)
+                            .addGap(58, 58, 58))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup()
@@ -122,15 +105,13 @@ public class MenuSalle extends JPanel {
                     .addComponent(textField1, GroupLayout.PREFERRED_SIZE, 62, GroupLayout.PREFERRED_SIZE)
                     .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
                     .addComponent(scrollPane1, GroupLayout.PREFERRED_SIZE, 268, GroupLayout.PREFERRED_SIZE)
-                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
                     .addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-                        .addComponent(creerSalle, GroupLayout.PREFERRED_SIZE, 62, GroupLayout.PREFERRED_SIZE)
                         .addComponent(button2, GroupLayout.PREFERRED_SIZE, 62, GroupLayout.PREFERRED_SIZE)
                         .addComponent(numero, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                        .addComponent(label6))
-                    .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
-                    .addComponent(annuler)
-                    .addGap(51, 51, 51))
+                        .addComponent(label6)
+                        .addComponent(annuler))
+                    .addContainerGap(84, Short.MAX_VALUE))
         );
         // JFormDesigner - End of component initialization  //GEN-END:initComponents
     }
@@ -138,7 +119,6 @@ public class MenuSalle extends JPanel {
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables
     // Generated using JFormDesigner Evaluation license - Fabrice
     private JLabel textField1;
-    private JButton creerSalle;
     private JButton button2;
     private JButton annuler;
     private JScrollPane scrollPane1;
