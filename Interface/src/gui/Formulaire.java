@@ -4,6 +4,8 @@
 
 package gui;
 
+import DAO.UtilisateurDAO;
+import connection.SConnection;
 import utils.Utilisateur;
 
 import java.awt.*;
@@ -21,14 +23,19 @@ public class Formulaire extends JPanel {
     private void button1MouseClicked(MouseEvent e) {
         // Création de l'objet utilisateur
         Utilisateur user = new Utilisateur(this.nom.getText(),this.prenom.getText(),this.email.getText(),this.adresse.getText());
-        System.out.println("Utilisateur créé");
 
-        //TODO Enregistrer le client dans la BD et vérifier si le mail n'existe pas déjà
-
-        JPanel contentPane = (JPanel) ((JFrame) this.getTopLevelAncestor()).getContentPane();
-        contentPane.removeAll();
-        contentPane.add(new Login());
-        contentPane.revalidate();
+        // Création du DAO pour se connecter à la BD
+        UtilisateurDAO daoUser= new UtilisateurDAO(SConnection.getInstance());
+        if (daoUser.find(this.email.getText()) != null) {
+            System.out.println("Mail déjà utilisé");
+        }
+        else {
+            daoUser.create(user);
+            JPanel contentPane = (JPanel) ((JFrame) this.getTopLevelAncestor()).getContentPane();
+            contentPane.removeAll();
+            contentPane.add(new Login());
+            contentPane.revalidate();
+        }
     }
 
     private void annulerMouseClicked(MouseEvent e) {
