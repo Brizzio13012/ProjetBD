@@ -11,7 +11,7 @@ public class UtilisateurDAO extends DAO<Utilisateur> {
 
     public boolean create(Utilisateur obj) {
         try {
-            PreparedStatement statement = this.connect.prepareStatement("INSERT INTO Utilisateur (EMAIL, NOM, PRENOM, ADRESSE) VALUES ( ?, ?, ?, ?)");
+            PreparedStatement statement = this.connect.prepareStatement("INSERT INTO Utilisateur (EMAIL, NOM, PRENOM, ADRESSE) VALUES ( ?, ?, ?, ?);");
             statement.setString(1, obj.getMail());
             statement.setString(2, obj.getNom());
             statement.setString(3, obj.getPrenom());
@@ -26,9 +26,9 @@ public class UtilisateurDAO extends DAO<Utilisateur> {
 
     public boolean delete(Utilisateur obj) {
         try {
-            Statement state = this.connect.createStatement();
-            String condition = "EMAIL=" + "'" + obj.getMail() + "'";
-            state.executeQuery("DELETE FROM Utilisateur WHERE " + condition);
+            PreparedStatement statement = this.connect.prepareStatement("DELETE FROM Utilisateur WHERE EMAIL=?;");
+            statement.setString(1, obj.getMail());
+            statement.execute();
             return true;
         } catch (SQLException e) {
             e.printStackTrace();

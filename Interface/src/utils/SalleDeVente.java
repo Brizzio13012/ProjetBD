@@ -1,30 +1,32 @@
 package utils;
 
 
-import java.util.LinkedList;
-
 public class SalleDeVente {
-    private TypeEnchere type;
-    private LinkedList<Vente> listeVentes;
+    private int idSalleDeVente;
+    private int type;
+    private String nomCategorie;
 
-    public SalleDeVente(TypeEnchere type) {
-        listeVentes = new LinkedList<Vente>();
+    public SalleDeVente(int type) {
         setType(type);
     }
 
-    public TypeEnchere getType() {
+    public String getIdSalleDeVente() { return idSalleDeVente; }
+
+    public void setIdSalleDeVente(int idSalleDeVente) { this.idSalleDeVente = idSalleDeVente; }
+
+    public String getType() {
         return type;
     }
 
-    public void setType(TypeEnchere type) {
+    public void setType(int type) {
         this.type = type;
     }
 
-    public LinkedList<Vente> getListeVentes() {
-        return listeVentes;
+    public String getNomCategorie() {
+        return nomCategorie;
     }
 
-    public void setListeVentes(LinkedList<Vente> listeVentes) {
-        this.listeVentes = listeVentes;
+    public void setNomCategorie(String nomCategorie) {
+        this.nomCategorie = nomCategorie;
     }
 }
