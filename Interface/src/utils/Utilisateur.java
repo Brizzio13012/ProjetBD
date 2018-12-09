@@ -6,6 +6,13 @@ public class Utilisateur {
     private String mail;
     private String adresse;
 
+    public Utilisateur(String nom, String prenom, String mail, String adresse) {
+        this.setNom(nom);
+        this.setPrenom(prenom);
+        this.setMail(mail);
+        this.setAdresse(adresse);
+    }
+
     public String getNom() {
         return nom;
     }

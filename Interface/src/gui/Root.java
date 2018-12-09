@@ -6,8 +6,6 @@ package gui;
 
 import java.awt.*;
 import javax.swing.*;
-import net.miginfocom.swing.*;
-
 /**
  * @author Fabrice
  */

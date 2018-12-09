@@ -4,6 +4,8 @@
 
 package gui;
 
+import utils.Utilisateur;
+
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
@@ -17,14 +19,11 @@ public class Formulaire extends JPanel {
     }
 
     private void button1MouseClicked(MouseEvent e) {
-        String nom = this.nom.getText();
-        String prenom = this.prenom.getText();
-        String email = this.email.getText();
+        // Création de l'objet utilisateur
+        Utilisateur user = new Utilisateur(this.nom.getText(),this.prenom.getText(),this.email.getText(),this.adresse.getText());
+        System.out.println("Utilisateur créé");
 
         //TODO Enregistrer le client dans la BD et vérifier si le mail n'existe pas déjà
-        if (nom.equals("") || prenom.equals("") || email.equals("")) {
-            System.out.println("Erreur d'informations");
-        }
 
         JPanel contentPane = (JPanel) ((JFrame) this.getTopLevelAncestor()).getContentPane();
         contentPane.removeAll();
@@ -44,14 +43,16 @@ public class Formulaire extends JPanel {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents
         // Generated using JFormDesigner Evaluation license - Fabrice
         button1 = new JButton();
-        textField5 = new JTextField();
-        textField6 = new JTextField();
-        textField7 = new JTextField();
+        textField5 = new JLabel();
+        textField6 = new JLabel();
+        textField7 = new JLabel();
         nom = new JTextField();
         email = new JTextField();
         prenom = new JTextField();
         annuler = new JButton();
-        textField1 = new JTextField();
+        textField1 = new JLabel();
+        textField8 = new JLabel();
+        adresse = new JTextField();
 
         //======== this ========
         setBackground(Color.gray);
@@ -79,21 +80,18 @@ public class Formulaire extends JPanel {
         textField5.setBackground(Color.gray);
         textField5.setFont(textField5.getFont().deriveFont(textField5.getFont().getSize() + 5f));
         textField5.setForeground(Color.black);
-        textField5.setEditable(false);
 
         //---- textField6 ----
         textField6.setText("Pr\u00e9nom");
         textField6.setBackground(Color.gray);
         textField6.setFont(textField6.getFont().deriveFont(textField6.getFont().getSize() + 5f));
         textField6.setForeground(Color.black);
-        textField6.setEditable(false);
 
         //---- textField7 ----
         textField7.setText("E-mail");
         textField7.setBackground(Color.gray);
         textField7.setFont(textField7.getFont().deriveFont(textField7.getFont().getSize() + 5f));
         textField7.setForeground(Color.black);
-        textField7.setEditable(false);
 
         //---- annuler ----
         annuler.setText("Annuler");
@@ -110,6 +108,12 @@ public class Formulaire extends JPanel {
         textField1.setText("Inscription");
         textField1.setBackground(Color.gray);
 
+        //---- textField8 ----
+        textField8.setText("Adresse");
+        textField8.setBackground(Color.gray);
+        textField8.setFont(textField8.getFont().deriveFont(textField8.getFont().getSize() + 5f));
+        textField8.setForeground(Color.black);
+
         GroupLayout layout = new GroupLayout(this);
         setLayout(layout);
         layout.setHorizontalGroup(
@@ -119,22 +123,24 @@ public class Formulaire extends JPanel {
                         .addGroup(layout.createSequentialGroup()
                             .addGroup(layout.createParallelGroup()
                                 .addGroup(layout.createSequentialGroup()
+                                    .addGap(230, 230, 230)
+                                    .addComponent(annuler, GroupLayout.PREFERRED_SIZE, 131, GroupLayout.PREFERRED_SIZE))
+                                .addGroup(layout.createSequentialGroup()
                                     .addGap(139, 139, 139)
-                                    .addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(button1, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addGroup(layout.createParallelGroup()
+                                        .addComponent(button1, GroupLayout.PREFERRED_SIZE, 300, GroupLayout.PREFERRED_SIZE)
                                         .addGroup(layout.createSequentialGroup()
                                             .addGroup(layout.createParallelGroup(GroupLayout.Alignment.TRAILING)
-                                                .addComponent(textField5, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                                                .addComponent(textField6, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                                                .addComponent(textField7, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+                                                .addComponent(textField5)
+                                                .addComponent(textField6)
+                                                .addComponent(textField7)
+                                                .addComponent(textField8))
                                             .addGap(27, 27, 27)
                                             .addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING, false)
-                                                .addComponent(prenom, GroupLayout.DEFAULT_SIZE, 193, Short.MAX_VALUE)
-                                                .addComponent(email, GroupLayout.DEFAULT_SIZE, 193, Short.MAX_VALUE)
-                                                .addComponent(nom, GroupLayout.DEFAULT_SIZE, 193, Short.MAX_VALUE)))))
-                                .addGroup(layout.createSequentialGroup()
-                                    .addGap(230, 230, 230)
-                                    .addComponent(annuler, GroupLayout.PREFERRED_SIZE, 131, GroupLayout.PREFERRED_SIZE)))
+                                                .addComponent(prenom)
+                                                .addComponent(email)
+                                                .addComponent(nom, GroupLayout.PREFERRED_SIZE, 193, GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(adresse, GroupLayout.Alignment.TRAILING, GroupLayout.PREFERRED_SIZE, 193, GroupLayout.PREFERRED_SIZE))))))
                             .addGap(0, 155, Short.MAX_VALUE))
                         .addGroup(layout.createSequentialGroup()
                             .addContainerGap()
@@ -145,8 +151,8 @@ public class Formulaire extends JPanel {
             layout.createParallelGroup()
                 .addGroup(GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                     .addContainerGap()
-                    .addComponent(textField1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                    .addGap(129, 129, 129)
+                    .addComponent(textField1)
+                    .addGap(85, 85, 85)
                     .addGroup(layout.createParallelGroup()
                         .addComponent(textField5, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
                         .addComponent(nom, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
@@ -158,11 +164,15 @@ public class Formulaire extends JPanel {
                     .addGroup(layout.createParallelGroup()
                         .addComponent(textField7, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
                         .addComponent(email, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-                    .addGap(48, 48, 48)
+                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                    .addGroup(layout.createParallelGroup()
+                        .addComponent(textField8, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+                        .addComponent(adresse, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+                    .addGap(50, 50, 50)
                     .addComponent(button1, GroupLayout.PREFERRED_SIZE, 66, GroupLayout.PREFERRED_SIZE)
                     .addGap(27, 27, 27)
                     .addComponent(annuler)
-                    .addContainerGap(46, Short.MAX_VALUE))
+                    .addContainerGap(52, Short.MAX_VALUE))
         );
         // JFormDesigner - End of component initialization  //GEN-END:initComponents
     }
@@ -170,13 +180,15 @@ public class Formulaire extends JPanel {
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables
     // Generated using JFormDesigner Evaluation license - Fabrice
     private JButton button1;
-    private JTextField textField5;
-    private JTextField textField6;
-    private JTextField textField7;
+    private JLabel textField5;
+    private JLabel textField6;
+    private JLabel textField7;
     private JTextField nom;
     private JTextField email;
     private JTextField prenom;
     private JButton annuler;
-    private JTextField textField1;
+    private JLabel textField1;
+    private JLabel textField8;
+    private JTextField adresse;
     // JFormDesigner - End of variables declaration  //GEN-END:variables
 }

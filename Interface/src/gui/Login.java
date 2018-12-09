@@ -37,7 +37,7 @@ public class Login extends JPanel {
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents
         // Generated using JFormDesigner Evaluation license - Fabrice
-        text = new JTextField();
+        text = new JLabel();
         mail = new JTextField();
         button1 = new JButton();
         button2 = new JButton();
@@ -59,7 +59,6 @@ public class Login extends JPanel {
         text.setBackground(Color.gray);
         text.setFont(text.getFont().deriveFont(text.getFont().getSize() + 5f));
         text.setForeground(Color.black);
-        text.setEditable(false);
         text.setHorizontalAlignment(SwingConstants.CENTER);
 
         //---- button1 ----
@@ -119,7 +118,7 @@ public class Login extends JPanel {
 
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables
     // Generated using JFormDesigner Evaluation license - Fabrice
-    private JTextField text;
+    private JLabel text;
     private JTextField mail;
     private JButton button1;
     private JButton button2;
