@@ -11,7 +11,7 @@ public class SConnection {
     //Mot de passe de l'utilisateur
     private String passwd = "leducqt";
     //Objet connection
-    private static Connection connect;
+    public static Connection connect;
 
     //Constructeur privé
     private SConnection(){

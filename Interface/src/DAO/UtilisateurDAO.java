@@ -2,10 +2,7 @@ package DAO;
 
 import utils.Utilisateur;
 
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 
 public class UtilisateurDAO extends DAO<Utilisateur> {
     public UtilisateurDAO(Connection conn) {
@@ -14,9 +11,12 @@ public class UtilisateurDAO extends DAO<Utilisateur> {
 
     public boolean create(Utilisateur obj) {
         try {
-            Statement state = this.connect.createStatement();
-            String values = "("+ obj.getMail()+", "+obj.getNom()+", "+obj.getPrenom()+", "+obj.getAdresse()+")";
-            state.executeQuery("INSERT INTO Utilisateur (EMAIL, NOM, PRENOM, ADRESSE) VALUES "+values+";");
+            PreparedStatement statement = this.connect.prepareStatement("INSERT INTO Utilisateur (EMAIL, NOM, PRENOM, ADRESSE) VALUES ( ?, ?, ?, ?)");
+            statement.setString(1, obj.getMail());
+            statement.setString(2, obj.getNom());
+            statement.setString(3, obj.getPrenom());
+            statement.setString(4, obj.getAdresse());
+            statement.execute();
             return true;
         } catch (SQLException e) {
             e.printStackTrace();

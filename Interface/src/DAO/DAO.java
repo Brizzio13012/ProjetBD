@@ -1,5 +1,7 @@
 package DAO;
 
+import connection.SConnection;
+
 import java.sql.Connection;
 import java.sql.SQLException;
 
@@ -7,7 +9,7 @@ public abstract class DAO<T> {
     protected Connection connect = null;
 
     public DAO(Connection conn){
-        this.connect = conn;
+        this.connect = SConnection.connect;
     }
 
     /**
