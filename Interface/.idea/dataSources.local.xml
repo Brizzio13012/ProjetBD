@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="dataSourceStorageLocal">
-    <data-source name="Data" uuid="024a9835-6e4c-44d7-9b4d-58f876392e38">
+    <data-source name="Data" uuid="50e24b6d-1f72-4acc-9b70-47e3065061ea">
       <database-info product="Oracle" version="Oracle Database 12c Enterprise Edition Release 12.1.0.1.0 - 64bit Production&#10;With the Partitioning, OLAP, Advanced Analytics and Real Application Testing options" jdbc-version="4.0" driver-name="Oracle JDBC driver" driver-version="12.1.0.2.0" family="ORACLE" exact-version="12.1.0.1">
         <extra-name-characters>$#</extra-name-characters>
         <identifier-quote-string>&quot;</identifier-quote-string>

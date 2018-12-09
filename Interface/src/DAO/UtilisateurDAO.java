@@ -42,12 +42,12 @@ public class UtilisateurDAO extends DAO<Utilisateur> {
 
     @Override
     public Utilisateur find(Object email) {
-        Utilisateur user = new Utilisateur("random", "random", (String) email, "random");
+        Utilisateur user = null;
         try {
-            ResultSet result = this.connect.createStatement(
-                    ResultSet.TYPE_SCROLL_INSENSITIVE,
-                    ResultSet.CONCUR_READ_ONLY).executeQuery("SELECT * FROM Utilisateur WHERE email = " + email);
-            if(result.first())
+            PreparedStatement statement = this.connect.prepareStatement("SELECT * FROM Utilisateur WHERE email = ?");
+            statement.setString(1, String.valueOf(email));
+            ResultSet result = statement.executeQuery();
+            if(result.next())
                 user = new Utilisateur(
                         result.getString("nom"),
                         result.getString("prenom"),
