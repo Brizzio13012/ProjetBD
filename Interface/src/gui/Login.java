@@ -4,6 +4,8 @@
 
 package gui;
 
+import utils.UserCourant;
+
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
@@ -25,20 +27,19 @@ public class Login extends JPanel {
     }
 
     private void button1MouseClicked(MouseEvent e) {
+        JPanel contentPane = (JPanel) ((JFrame) this.getTopLevelAncestor()).getContentPane();
         if ( this.mail.getText().equals("admin")) {
-            JPanel contentPane = (JPanel) ((JFrame) this.getTopLevelAncestor()).getContentPane();
+            UserCourant.setAdmin(true);
             contentPane.removeAll();
             contentPane.add(new AdminMenuSalle());
-            contentPane.revalidate();
-            contentPane.repaint();
         }
+        // TODO gérer le cas où l'utilisateur n'est pas dans la BD
         else {
-            JPanel contentPane = (JPanel) ((JFrame) this.getTopLevelAncestor()).getContentPane();
             contentPane.removeAll();
             contentPane.add(new MenuSalle());
-            contentPane.revalidate();
-            contentPane.repaint();
         }
+        contentPane.revalidate();
+        contentPane.repaint();
     }
 
     private void initComponents() {

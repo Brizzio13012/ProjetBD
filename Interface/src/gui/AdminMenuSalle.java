@@ -7,6 +7,7 @@ package gui;
 
 import utils.SalleDeVente;
 import utils.TypeEnchere;
+import utils.UserCourant;
 
 import java.awt.*;
 import java.awt.event.*;
@@ -71,6 +72,7 @@ public class AdminMenuSalle extends JPanel {
     }
 
     private void annulerMouseClicked(MouseEvent e) {
+        UserCourant.setAdmin(false);
         JPanel contentPane = (JPanel) ((JFrame) this.getTopLevelAncestor()).getContentPane();
         contentPane.removeAll();
         contentPane.add(new Login());
