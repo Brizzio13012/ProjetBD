@@ -10,11 +10,11 @@ public class SalleDeVente {
         setType(type);
     }
 
-    public String getIdSalleDeVente() { return idSalleDeVente; }
+    public int getIdSalleDeVente() { return idSalleDeVente; }
 
     public void setIdSalleDeVente(int idSalleDeVente) { this.idSalleDeVente = idSalleDeVente; }
 
-    public String getType() {
+    public int getType() {
         return type;
     }
 

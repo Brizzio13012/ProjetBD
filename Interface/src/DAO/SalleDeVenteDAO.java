@@ -13,8 +13,8 @@ public class SalleDeVenteDAO extends DAO<SalleDeVente> {
     public boolean create(SalleDeVente obj) {
         try {
             PreparedStatement statement = this.connect.prepareStatement("INSERT INTO SalleDeVente (IDSALLE, TYPESALLE, NOMCATEGORIE) VALUES VALUES (?, ?, ?);");
-            statement.setString(1, obj.getIdSalleDeVente());
-            statement.setString(2, obj.getType());
+            statement.setInt(1, obj.getIdSalleDeVente());
+            statement.setInt(2, obj.getType());
             statement.setString(3, obj.getNomCategorie());
             statement.execute();
             return true;
@@ -28,7 +28,7 @@ public class SalleDeVenteDAO extends DAO<SalleDeVente> {
     public boolean delete(SalleDeVente obj) {
         try {
             PreparedStatement statement = this.connect.prepareStatement("DELETE FROM SALLEDEVENTE WHERE IDSALLE=?;");
-            statement.setString(1, obj.getIdSalleDeVente());
+            statement.setInt(1, obj.getIdSalleDeVente());
             statement.execute();
             return true;
         } catch (SQLException e) {
