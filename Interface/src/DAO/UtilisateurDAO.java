@@ -27,7 +27,7 @@ public class UtilisateurDAO extends DAO<Utilisateur> {
     public boolean delete(Utilisateur obj) {
         try {
             Statement state = this.connect.createStatement();
-            String condition = "Email=" + "'" + obj.getMail() + "'";
+            String condition = "EMAIL=" + "'" + obj.getMail() + "'";
             state.executeQuery("DELETE FROM Utilisateur WHERE " + condition);
             return true;
         } catch (SQLException e) {
