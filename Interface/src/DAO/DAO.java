@@ -1,6 +1,7 @@
 package DAO;
 
 import java.sql.Connection;
+import java.sql.SQLException;
 
 public abstract class DAO<T> {
     protected Connection connect = null;
@@ -14,14 +15,14 @@ public abstract class DAO<T> {
      * @param obj
      * @return boolean
      */
-    public abstract boolean create(T obj);
+    public abstract boolean create(T obj) throws SQLException;
 
     /**
      * Méthode pour effacer
      * @param obj
      * @return boolean
      */
-    public abstract boolean delete(T obj);
+    public abstract boolean delete(T obj) throws SQLException;
 
     /**
      * Méthode de mise à jour
@@ -35,5 +36,5 @@ public abstract class DAO<T> {
      * @param id
      * @return T
      */
-    public abstract T find(int id);
+    public abstract T find(Object id);
 }
