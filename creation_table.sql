@@ -1,3 +1,4 @@
+SET AUTOCOMMIT ON;
 DROP TABLE Caracteristique;
 DROP TABLE Enchere;
 DROP TABLE Vente;
@@ -78,6 +79,6 @@ CREATE TABLE Enchere(
 CREATE TABLE Caracteristique(
   idProduit int CHECK (idProduit >= 0),
   nom character varying(50) NOT NULL,
-  valeur int CHECK (valeur >= 0),
+  valeur character varying(100),
   PRIMARY KEY(idProduit, nom)
 );
