@@ -6,7 +6,7 @@ public class TestAjout {
 
     public static void main(String[] args) {
         UtilisateurDAO daoUser= new UtilisateurDAO(SConnection.getInstance());
-        Utilisateur user = new Utilisateur("Pont", "Fabrice", "fa.pon", "21 BD Gambetta");
+        Utilisateur user = new Utilisateur("Pont", "Fabrice", "theoleducq@yahoooooo.fr", "21 BD Gambetta");
         daoUser.create(user);
     }
 }

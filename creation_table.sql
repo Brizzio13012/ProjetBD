@@ -14,7 +14,7 @@ CREATE TABLE TypeEnchere(
   revocableOuPas int default 0  NOT NULL,
   prixDeDepart float check (prixDeDepart >= 0),
   dureeLimiteeOuPas int default 0  NOT NULL,
-  dureeLimite float NOT NULL,
+  dureeLimite float,
   PRIMARY KEY(idTypeEnchere)
 );
 
