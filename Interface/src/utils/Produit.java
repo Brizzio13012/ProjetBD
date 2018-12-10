@@ -1,32 +1,43 @@
 package utils;
 
 public class Produit {
-    private int id;
-    private String nom;
-    private int prixRevient;
+    private int idProduit;
+    private String nomProduit;
+    private float prixRevient;
     private int stock;
+    private String nomCategorie;
+    private String emailVendeur;
 
-    public int getId() {
-        return id;
+    public Produit(int idProduit, String nomProduit, float prixRevient, int stock, String nomCategorie, String emailVendeur) {
+        this.idProduit = idProduit;
+        this.nomProduit = nomProduit;
+        this.prixRevient = prixRevient;
+        this.stock = stock;
+        this.nomCategorie = nomCategorie;
+        this.emailVendeur = emailVendeur;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public int getIdProduit() {
+        return idProduit;
     }
 
-    public String getNom() {
-        return nom;
+    public void setIdProduit(int idProduit) {
+        this.idProduit = idProduit;
     }
 
-    public void setNom(String nom) {
-        this.nom = nom;
+    public String getNomProduit() {
+        return nomProduit;
     }
 
-    public int getPrixRevient() {
+    public void setNomProduit(String nomProduit) {
+        this.nomProduit = nomProduit;
+    }
+
+    public float getPrixRevient() {
         return prixRevient;
     }
 
-    public void setPrixRevient(int prixRevient) {
+    public void setPrixRevient(float prixRevient) {
         this.prixRevient = prixRevient;
     }
 
@@ -36,5 +47,21 @@ public class Produit {
 
     public void setStock(int stock) {
         this.stock = stock;
+    }
+
+    public String getNomCategorie() {
+        return nomCategorie;
+    }
+
+    public void setNomCategorie(String nomCategorie) {
+        this.nomCategorie = nomCategorie;
+    }
+
+    public String getEmailVendeur() {
+        return emailVendeur;
+    }
+
+    public void setEmailVendeur(String emailVendeur) {
+        this.emailVendeur = emailVendeur;
     }
 }

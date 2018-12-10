@@ -1,14 +1,16 @@
 package utils;
 
+import java.sql.Date;
+
 public class SalleDeVente {
     private int idSalle;
     private int type;
     private String nomCat;
 
     public SalleDeVente(int idSalle, int type, String nomCat) {
-        setIdSalle(idSalle);
-        setType(type);
-        setNomCat(nomCat);
+        this.idSalle = idSalle;
+        this.type = type;
+        this.nomCat = nomCat;
     }
 
     public int getIdSalle() {

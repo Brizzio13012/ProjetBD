@@ -4,6 +4,11 @@ public class CategorieProduits {
     private String nom;
     private String description;
 
+    public CategorieProduits(String nom, String description) {
+        this.nom = nom;
+        this.description = description;
+    }
+
     public String getNom() {
         return nom;
     }

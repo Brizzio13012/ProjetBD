@@ -11,7 +11,7 @@ public class SalleDeVenteDAO extends DAO<SalleDeVente> {
 
     public boolean create(SalleDeVente obj) {
         try {
-            PreparedStatement statement = this.connect.prepareStatement("INSERT INTO SalleDeVente (IDSALLE, TYPESALLE, NOMCATEGORIE) VALUES VALUES (?, ?, ?);");
+            PreparedStatement statement = this.connect.prepareStatement("INSERT INTO SALLEDEVENTE (IDSALLE, TYPESALLE, NOMCATEGORIE) VALUES (?, ?, ?)");
             statement.setInt(1, obj.getIdSalle());
             statement.setInt(2, obj.getType());
             statement.setString(3, obj.getNomCat());
@@ -46,7 +46,7 @@ public class SalleDeVenteDAO extends DAO<SalleDeVente> {
         SalleDeVente salle = null;
         try {
             PreparedStatement statement = this.connect.prepareStatement("SELECT * FROM SALLEDEVENTE WHERE IDSALLE = ?");
-            statement.setString(1, String.valueOf(id));
+            statement.setInt(1, (Integer) id);
             ResultSet result = statement.executeQuery();
             if(result.next())
                 salle = new SalleDeVente(

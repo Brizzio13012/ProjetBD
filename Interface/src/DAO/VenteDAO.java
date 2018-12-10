@@ -42,7 +42,7 @@ public class VenteDAO extends DAO<Vente> {
         Vente vente = null;
         try {
             PreparedStatement statement = this.connect.prepareStatement("SELECT * FROM Vente WHERE idVente = ?");
-            statement.setString(1, String.valueOf(idVente));
+            statement.setInt(1, (Integer) idVente);
             ResultSet result = statement.executeQuery();
             if(result.next())
                 vente = new Vente(

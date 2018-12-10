@@ -1,6 +1,6 @@
 package utils;
 
-import java.util.Date;
+import java.sql.Date;
 
 public class Vente {
     private int idVente;
