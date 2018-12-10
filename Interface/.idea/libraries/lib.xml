@@ -18,8 +18,15 @@
       <root url="jar://$PROJECT_DIR$/lib/intellij_forms_rt_src.zip!/" />
       <root url="jar://$PROJECT_DIR$/lib/miglayout-core.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/beansbinding-doc.zip!/" />
+      <root url="file://$PROJECT_DIR$/commons-dbutils-1.7" />
     </CLASSES>
-    <JAVADOC />
-    <SOURCES />
+    <JAVADOC>
+      <root url="file://$PROJECT_DIR$/commons-dbutils-1.7/apidocs" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="file://$PROJECT_DIR$/commons-dbutils-1.7" />
+    </SOURCES>
+    <jarDirectory url="file://$PROJECT_DIR$/commons-dbutils-1.7" recursive="false" />
+    <jarDirectory url="file://$PROJECT_DIR$/commons-dbutils-1.7" recursive="false" type="SOURCES" />
   </library>
 </component>

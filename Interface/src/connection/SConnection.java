@@ -14,7 +14,7 @@ public class SConnection {
     public static Connection connect;
 
     //Constructeur privé
-    private SConnection(){
+    public SConnection(){
         try {
             connect = DriverManager.getConnection(url, user, passwd);
         } catch (SQLException e) {

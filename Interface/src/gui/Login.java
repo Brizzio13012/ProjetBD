@@ -4,6 +4,8 @@
 
 package gui;
 
+import DAO.UtilisateurDAO;
+import connection.SConnection;
 import utils.UserCourant;
 
 import java.awt.*;
@@ -33,13 +35,17 @@ public class Login extends JPanel {
             contentPane.removeAll();
             contentPane.add(new AdminMenuSalle());
         }
-        // TODO gérer le cas où l'utilisateur n'est pas dans la BD
-        else {
+        else if (new UtilisateurDAO(SConnection.getInstance()).find(this.mail.getText()) != null){
             contentPane.removeAll();
             contentPane.add(new MenuSalle());
         }
+        else System.out.println("Utilisateur inexistant");
         contentPane.revalidate();
         contentPane.repaint();
+    }
+
+    private void userMouseClicked(MouseEvent e) {
+        ajout.setVisible(true);
     }
 
     private void initComponents() {
@@ -49,6 +55,10 @@ public class Login extends JPanel {
         mail = new JTextField();
         button1 = new JButton();
         button2 = new JButton();
+        user = new JButton();
+        ajout = new JDialog();
+        scrollPane1 = new JScrollPane();
+        table1 = new JTable(new UtilisateurListe().getData(), new UtilisateurListe().getEntetes());
 
         //======== this ========
         setBackground(Color.gray);
@@ -87,6 +97,15 @@ public class Login extends JPanel {
             }
         });
 
+        //---- user ----
+        user.setText("Liste des utilisateurs");
+        user.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                userMouseClicked(e);
+            }
+        });
+
         GroupLayout layout = new GroupLayout(this);
         setLayout(layout);
         layout.setHorizontalGroup(
@@ -107,11 +126,17 @@ public class Login extends JPanel {
                     .addContainerGap(263, Short.MAX_VALUE)
                     .addComponent(button1)
                     .addGap(259, 259, 259))
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(67, 67, 67)
+                    .addComponent(user)
+                    .addContainerGap(385, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup()
                 .addGroup(layout.createSequentialGroup()
-                    .addGap(131, 131, 131)
+                    .addGap(46, 46, 46)
+                    .addComponent(user)
+                    .addGap(65, 65, 65)
                     .addComponent(text, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
                     .addGap(18, 18, 18)
                     .addComponent(mail, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
@@ -119,8 +144,39 @@ public class Login extends JPanel {
                     .addComponent(button1)
                     .addGap(88, 88, 88)
                     .addComponent(button2, GroupLayout.PREFERRED_SIZE, 85, GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(76, Short.MAX_VALUE))
+                    .addContainerGap(66, Short.MAX_VALUE))
         );
+
+        //======== ajout ========
+        {
+            ajout.setBackground(Color.gray);
+            ajout.setModal(true);
+            ajout.setResizable(false);
+            Container ajoutContentPane = ajout.getContentPane();
+
+            //======== scrollPane1 ========
+            {
+                scrollPane1.setViewportView(table1);
+            }
+
+            GroupLayout ajoutContentPaneLayout = new GroupLayout(ajoutContentPane);
+            ajoutContentPane.setLayout(ajoutContentPaneLayout);
+            ajoutContentPaneLayout.setHorizontalGroup(
+                ajoutContentPaneLayout.createParallelGroup()
+                    .addGroup(GroupLayout.Alignment.TRAILING, ajoutContentPaneLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(scrollPane1, GroupLayout.DEFAULT_SIZE, 516, Short.MAX_VALUE)
+                        .addContainerGap())
+            );
+            ajoutContentPaneLayout.setVerticalGroup(
+                ajoutContentPaneLayout.createParallelGroup()
+                    .addGroup(ajoutContentPaneLayout.createSequentialGroup()
+                        .addComponent(scrollPane1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 52, Short.MAX_VALUE))
+            );
+            ajout.pack();
+            ajout.setLocationRelativeTo(ajout.getOwner());
+        }
         // JFormDesigner - End of component initialization  //GEN-END:initComponents
     }
 
@@ -130,5 +186,9 @@ public class Login extends JPanel {
     private JTextField mail;
     private JButton button1;
     private JButton button2;
+    private JButton user;
+    private JDialog ajout;
+    private JScrollPane scrollPane1;
+    private JTable table1;
     // JFormDesigner - End of variables declaration  //GEN-END:variables
 }

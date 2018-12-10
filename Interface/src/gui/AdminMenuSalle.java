@@ -5,16 +5,21 @@
 package gui;
 
 
+import connection.SConnection;
 import utils.SalleDeVente;
 import utils.TypeEnchere;
 import utils.UserCourant;
+import utils.Utilisateur;
 
 import java.awt.*;
 import java.awt.event.*;
+import java.sql.*;
 import java.util.Vector;
 import javax.swing.*;
 import javax.swing.GroupLayout;
 import javax.swing.table.TableColumn;
+import javax.swing.table.TableModel;
+
 
 /**
  * @author Fabrice
@@ -28,6 +33,10 @@ public class AdminMenuSalle extends JPanel {
         choixMultiple.addItem("false");
         choixMontant.addItem("montante");
         choixMontant.addItem("descendante");
+
+        // Modification du JTable
+        //UtilisateurListe us = new UtilisateurListe();
+        //table1 = new JTable(us.getData(), us.getEntetes());
     }
 
     private void button1MouseClicked(MouseEvent e) {
